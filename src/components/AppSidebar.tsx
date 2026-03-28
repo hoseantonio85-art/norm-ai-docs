@@ -109,7 +109,8 @@ const groups: NavGroup[] = [
   {
     label: "Examples",
     items: [
-      { title: "Examples", url: "/examples", icon: Eye },
+      { title: "Object Modal v3", url: "/examples/object-modal-demo", icon: Box },
+      { title: "Wireframes", url: "/examples", icon: Eye },
     ],
   },
 ];

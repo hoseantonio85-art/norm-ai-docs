@@ -90,6 +90,9 @@ const App = () => (
             <Route path="/flows/ai-work" element={<AIWork />} />
             <Route path="/flows/navigation" element={<NavigationFlow />} />
 
+            {/* Examples */}
+            <Route path="/examples/object-modal-demo" element={<ObjectModalDemo />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </DocLayout>
