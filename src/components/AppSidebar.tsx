@@ -1,4 +1,32 @@
-import { FileText, Layers, GitBranch, Activity, Workflow, Eye } from "lucide-react";
+import {
+  FileText,
+  Layers,
+  Box,
+  BookOpen,
+  PanelRight,
+  BarChart3,
+  Bot,
+  CheckCircle,
+  Settings,
+  Database,
+  Bell,
+  Navigation,
+  Maximize2,
+  ArrowRight,
+  Users,
+  LayoutGrid,
+  RefreshCw,
+  ShieldOff,
+  Shield,
+  Workflow,
+  GitBranch,
+  Link,
+  Zap,
+  Wrench,
+  Activity,
+  MapPin,
+  Eye,
+} from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 import {
@@ -6,19 +34,82 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
+  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
 
-const items = [
-  { title: "Overview", url: "/", icon: FileText },
-  { title: "Core Concepts", url: "/core-concepts", icon: Layers },
-  { title: "UX Patterns", url: "/ux-patterns", icon: GitBranch },
-  { title: "Interaction Model", url: "/interaction-model", icon: Activity },
-  { title: "Flows", url: "/flows", icon: Workflow },
-  { title: "Examples", url: "/examples", icon: Eye },
+interface NavItem {
+  title: string;
+  url: string;
+  icon: React.ComponentType<{ className?: string }>;
+}
+
+interface NavGroup {
+  label: string;
+  items: NavItem[];
+}
+
+const groups: NavGroup[] = [
+  {
+    label: "Core",
+    items: [
+      { title: "Overview", url: "/", icon: FileText },
+      { title: "Core Concepts", url: "/core-concepts", icon: Layers },
+    ],
+  },
+  {
+    label: "Patterns",
+    items: [
+      { title: "Object Modal", url: "/patterns/object-modal", icon: Box },
+      { title: "Subject Modal", url: "/patterns/subject-modal", icon: BookOpen },
+      { title: "Drawer", url: "/patterns/drawer", icon: PanelRight },
+      { title: "Analysis Result", url: "/patterns/analysis-result", icon: BarChart3 },
+      { title: "AI State Block", url: "/patterns/ai-state-block", icon: Bot },
+      { title: "Action Confirmation", url: "/patterns/action-confirmation", icon: CheckCircle },
+    ],
+  },
+  {
+    label: "System",
+    items: [
+      { title: "Orchestration", url: "/system/orchestration", icon: Settings },
+      { title: "State Model", url: "/system/state-model", icon: Database },
+      { title: "Signals", url: "/system/signals", icon: Bell },
+      { title: "Relation Navigation", url: "/system/relation-navigation", icon: Navigation },
+    ],
+  },
+  {
+    label: "Interaction",
+    items: [
+      { title: "Modal over Modal", url: "/interaction/modal-over-modal", icon: Maximize2 },
+      { title: "Data → Action", url: "/interaction/data-interpretation-action", icon: ArrowRight },
+      { title: "AI → User → Decision", url: "/interaction/ai-user-decision", icon: Users },
+      { title: "UI Layers", url: "/interaction/ui-layers", icon: LayoutGrid },
+      { title: "AI Loop", url: "/interaction/ai-loop", icon: RefreshCw },
+      { title: "Non Blocking", url: "/interaction/non-blocking", icon: ShieldOff },
+      { title: "User Control Priority", url: "/interaction/user-control-priority", icon: Shield },
+    ],
+  },
+  {
+    label: "Flows",
+    items: [
+      { title: "Flow Model", url: "/flows/flow-model", icon: GitBranch },
+      { title: "Создание события", url: "/flows/create-event", icon: Zap },
+      { title: "Связь с риском", url: "/flows/link-risk", icon: Link },
+      { title: "Анализ", url: "/flows/analysis", icon: Activity },
+      { title: "Применение мер", url: "/flows/apply-measures", icon: Wrench },
+      { title: "Работа AI", url: "/flows/ai-work", icon: Bot },
+      { title: "Навигация", url: "/flows/navigation", icon: MapPin },
+    ],
+  },
+  {
+    label: "Examples",
+    items: [
+      { title: "Examples", url: "/examples", icon: Eye },
+    ],
+  },
 ];
 
 export function AppSidebar() {
@@ -36,27 +127,38 @@ export function AppSidebar() {
             </span>
           )}
         </div>
-        <SidebarGroup>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <NavLink
-                      to={item.url}
-                      end={item.url === "/"}
-                      className="hover:bg-accent/50"
-                      activeClassName="bg-accent text-foreground font-medium"
-                    >
-                      <item.icon className="mr-2 h-4 w-4" />
-                      {!collapsed && <span>{item.title}</span>}
-                    </NavLink>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+        {groups.map((group) => {
+          const isGroupActive = group.items.some(
+            (item) =>
+              item.url === "/"
+                ? location.pathname === "/"
+                : location.pathname.startsWith(item.url)
+          );
+          return (
+            <SidebarGroup key={group.label} defaultOpen={isGroupActive}>
+              <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {group.items.map((item) => (
+                    <SidebarMenuItem key={item.title}>
+                      <SidebarMenuButton asChild>
+                        <NavLink
+                          to={item.url}
+                          end={item.url === "/"}
+                          className="hover:bg-accent/50"
+                          activeClassName="bg-accent text-foreground font-medium"
+                        >
+                          <item.icon className="mr-2 h-4 w-4" />
+                          {!collapsed && <span>{item.title}</span>}
+                        </NavLink>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          );
+        })}
       </SidebarContent>
     </Sidebar>
   );
