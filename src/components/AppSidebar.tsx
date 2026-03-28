@@ -18,7 +18,6 @@ import {
   RefreshCw,
   ShieldOff,
   Shield,
-  Workflow,
   GitBranch,
   Link,
   Zap,
@@ -26,20 +25,23 @@ import {
   Activity,
   MapPin,
   Eye,
+  ChevronRight,
 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 import {
   Sidebar,
   SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 interface NavItem {
   title: string;
@@ -134,11 +136,19 @@ export function AppSidebar() {
                 ? location.pathname === "/"
                 : location.pathname.startsWith(item.url)
           );
+
           return (
-            <SidebarGroup key={group.label}>
-              <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
-              <SidebarGroupContent>
-                <SidebarMenu>
+            <Collapsible key={group.label} defaultOpen={isGroupActive} className="group/collapsible">
+              <div className="px-2 py-1">
+                <CollapsibleTrigger className="flex w-full items-center justify-between rounded-md px-2 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground hover:bg-accent/50 transition-colors">
+                  <span>{group.label}</span>
+                  {!collapsed && (
+                    <ChevronRight className="h-3.5 w-3.5 transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                  )}
+                </CollapsibleTrigger>
+              </div>
+              <CollapsibleContent>
+                <SidebarMenu className="pl-2">
                   {group.items.map((item) => (
                     <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton asChild>
@@ -155,8 +165,8 @@ export function AppSidebar() {
                     </SidebarMenuItem>
                   ))}
                 </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
+              </CollapsibleContent>
+            </Collapsible>
           );
         })}
       </SidebarContent>
