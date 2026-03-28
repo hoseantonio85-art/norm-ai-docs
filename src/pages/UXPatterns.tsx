@@ -97,6 +97,23 @@ const patterns: PatternProps[] = [
     composition: ["ссылка", "список связанных сущностей"],
     behavior: ["переход открывает новую модалку", "допускается modal over modal"],
   },
+  {
+    id: "ORCHESTRATION",
+    name: "Orchestration",
+    when: "Любое сложное взаимодействие внутри объекта",
+    includes: [
+      "object modal (основной контейнер)",
+      "signals (состояние)",
+      "AI state (процесс)",
+      "drawer (контекст)",
+      "navigation (связи)",
+    ],
+    behavior: [
+      "слои могут добавляться, но не ломают основной контекст",
+      "AI не перехватывает управление",
+      "пользователь остаётся центром принятия решений",
+    ],
+  },
 ];
 
 const wireframePatterns = ["OBJECT_MODAL", "SUBJECT_MODAL", "AI_STATE_BLOCK", "ACTION_CONFIRMATION", "ANALYSIS_RESULT", "DRAWER", "ASYNC_STATE"];
