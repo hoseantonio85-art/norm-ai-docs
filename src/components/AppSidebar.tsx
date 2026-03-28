@@ -135,7 +135,7 @@ export function AppSidebar() {
                 : location.pathname.startsWith(item.url)
           );
           return (
-            <SidebarGroup key={group.label} defaultOpen={isGroupActive}>
+            <SidebarGroup key={group.label}>
               <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
