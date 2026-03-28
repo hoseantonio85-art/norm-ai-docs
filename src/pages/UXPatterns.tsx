@@ -132,7 +132,13 @@ const UXPatterns = () => (
     <div className="space-y-8">
       {patterns.map((p) => (
         <div key={p.id}>
-          <DocCard title={p.name}>
+          <DocCard title={p.id === "ORCHESTRATION" ? `${p.name} — главный паттерн системы` : p.name}>
+            {p.role && (
+              <p className="mb-3">
+                <span className="font-semibold">Роль: </span>
+                <span>{p.role}</span>
+              </p>
+            )}
             <p className="mb-3">
               <span className="font-semibold">Когда: </span>
               <span>{p.when}</span>
