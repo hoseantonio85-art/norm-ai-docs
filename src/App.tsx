@@ -41,6 +41,9 @@ import ApplyMeasures from "./pages/flows/ApplyMeasures";
 import AIWork from "./pages/flows/AIWork";
 import NavigationFlow from "./pages/flows/NavigationFlow";
 
+// Examples
+import ObjectModalDemo from "./pages/examples/ObjectModalDemo";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -86,6 +89,9 @@ const App = () => (
             <Route path="/flows/apply-measures" element={<ApplyMeasures />} />
             <Route path="/flows/ai-work" element={<AIWork />} />
             <Route path="/flows/navigation" element={<NavigationFlow />} />
+
+            {/* Examples */}
+            <Route path="/examples/object-modal-demo" element={<ObjectModalDemo />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>
