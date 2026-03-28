@@ -220,6 +220,12 @@ const UXPatterns = () => (
                 {p.relation}
               </p>
             )}
+            {p.id === "STATE_MODEL" && (
+              <div className="mt-3 p-3 border border-border rounded bg-muted/50 font-mono text-sm text-muted-foreground">
+                <span className="font-semibold text-foreground">Пример: </span>
+                object = in progress · AI = processing · UI = viewing
+              </div>
+            )}
           </DocCard>
           {wireframePatterns.includes(p.id) && <WireframeSlot label={p.id} />}
         </div>
