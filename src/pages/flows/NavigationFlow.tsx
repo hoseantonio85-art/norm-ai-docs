@@ -1,16 +1,17 @@
 import PageHeader from "@/components/PageHeader";
-import DocCard from "@/components/DocCard";
+import PatternSection from "@/components/PatternSection";
 
 const NavigationFlow = () => (
-  <div>
+  <div className="space-y-6">
     <PageHeader title="Навигация" subtitle="Сценарий навигации" />
-    <DocCard title="Навигация">
+
+    <PatternSection title="Шаги" variant="structure">
       <ol className="list-decimal list-inside space-y-1 text-muted-foreground">
         <li>Пользователь открывает объект</li>
         <li>Переходит в субъект</li>
         <li>Возвращается или открывает новый слой</li>
       </ol>
-    </DocCard>
+    </PatternSection>
   </div>
 );
 

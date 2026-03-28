@@ -1,11 +1,11 @@
 import PageHeader from "@/components/PageHeader";
-import DocCard from "@/components/DocCard";
+import PatternSection from "@/components/PatternSection";
 
 const UILayers = () => (
-  <div>
+  <div className="space-y-6">
     <PageHeader title="UI Layers" subtitle="Уровни интерфейса" />
-    <DocCard title="UI Layers">
-      <p className="mb-2 text-muted-foreground">Уровни:</p>
+
+    <PatternSection title="Уровни" variant="structure">
       <ol className="list-decimal list-inside space-y-1 text-muted-foreground">
         <li>page</li>
         <li>modal</li>
@@ -13,10 +13,13 @@ const UILayers = () => (
         <li>popover</li>
         <li>notification</li>
       </ol>
-      <p className="mt-3 text-muted-foreground">
-        Правило: каждый уровень не ломает предыдущий
+    </PatternSection>
+
+    <PatternSection title="Правила" variant="rules">
+      <p className="text-muted-foreground">
+        Каждый уровень не ломает предыдущий
       </p>
-    </DocCard>
+    </PatternSection>
   </div>
 );
 

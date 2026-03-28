@@ -1,17 +1,18 @@
 import PageHeader from "@/components/PageHeader";
-import DocCard from "@/components/DocCard";
+import PatternSection from "@/components/PatternSection";
 
 const AIWork = () => (
-  <div>
+  <div className="space-y-6">
     <PageHeader title="Работа AI" subtitle="Сценарий работы AI" />
-    <DocCard title="Работа AI">
+
+    <PatternSection title="Шаги" variant="structure">
       <ol className="list-decimal list-inside space-y-1 text-muted-foreground">
         <li>AI запускается</li>
         <li>Показывает статус</li>
         <li>Даёт результат или CTA</li>
         <li>Пользователь принимает решение</li>
       </ol>
-    </DocCard>
+    </PatternSection>
   </div>
 );
 

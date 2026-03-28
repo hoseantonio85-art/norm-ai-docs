@@ -1,19 +1,21 @@
 import PageHeader from "@/components/PageHeader";
-import DocCard from "@/components/DocCard";
+import PatternSection from "@/components/PatternSection";
 
 const UserControlPriority = () => (
-  <div>
+  <div className="space-y-6">
     <PageHeader title="User Control Priority" subtitle="Базовый принцип системы" />
-    <DocCard title="User Control Priority — базовый принцип системы">
-      <p className="mb-2">
-        <span className="font-semibold">Правило: </span>
-        <span className="text-muted-foreground">AI предлагает → пользователь принимает решение → система исполняет</span>
+
+    <PatternSection title="Правила" variant="rules">
+      <p className="mb-2 text-muted-foreground">
+        AI предлагает → пользователь принимает решение → система исполняет
       </p>
-      <p>
-        <span className="font-semibold">Ограничение: </span>
-        <span className="text-muted-foreground">AI не принимает финальных решений без пользователя</span>
+    </PatternSection>
+
+    <PatternSection title="Ограничение" variant="behavior">
+      <p className="text-muted-foreground">
+        AI не принимает финальных решений без пользователя
       </p>
-    </DocCard>
+    </PatternSection>
   </div>
 );
 

@@ -6,10 +6,6 @@ const ActionConfirmation = () => (
   <div className="space-y-6">
     <PageHeader title="Action Confirmation" subtitle="Подтверждение действия" />
 
-    <PatternSection title="Когда" variant="when">
-      <p>Подтверждение действия</p>
-    </PatternSection>
-
     <PatternSection title="Состав" variant="structure">
       <ul className="list-disc list-inside space-y-1 text-muted-foreground">
         <li>одно действие → popover</li>

@@ -1,16 +1,17 @@
 import PageHeader from "@/components/PageHeader";
-import DocCard from "@/components/DocCard";
+import PatternSection from "@/components/PatternSection";
 
 const AnalysisFlow = () => (
-  <div>
+  <div className="space-y-6">
     <PageHeader title="Анализ" subtitle="Сценарий анализа" />
-    <DocCard title="Анализ">
+
+    <PatternSection title="Шаги" variant="structure">
       <ol className="list-decimal list-inside space-y-1 text-muted-foreground">
         <li>Запуск анализа</li>
         <li>AI обрабатывает данные</li>
         <li>Отображение результата</li>
       </ol>
-    </DocCard>
+    </PatternSection>
   </div>
 );
 
