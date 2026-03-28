@@ -122,6 +122,17 @@ const patterns: PatternProps[] = [
       "пользователь остаётся центром принятия решений",
     ],
   },
+  {
+    id: "STATE_MODEL",
+    name: "State Model",
+    when: "Любое взаимодействие с объектами и AI",
+    types: [
+      "Object state: draft, in progress, approved",
+      "AI state: idle, processing, result, failed",
+      "UI state: viewing, editing, navigating",
+    ],
+    rules: ["состояния существуют параллельно и не конфликтуют"],
+  },
 ];
 
 const wireframePatterns = ["OBJECT_MODAL", "SUBJECT_MODAL", "AI_STATE_BLOCK", "ACTION_CONFIRMATION", "ANALYSIS_RESULT", "DRAWER", "ASYNC_STATE"];
