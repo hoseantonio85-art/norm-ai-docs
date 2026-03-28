@@ -1,6 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import PatternSection from "@/components/PatternSection";
-import WireframeSlot from "@/components/WireframeSlot";
+import StructureWireframe from "@/components/StructureWireframe";
 
 const DrawerPattern = () => (
   <div className="space-y-6">
@@ -30,7 +30,22 @@ const DrawerPattern = () => (
       </ul>
     </PatternSection>
 
-    <WireframeSlot label="DRAWER" />
+    <StructureWireframe
+      direction="row"
+      zones={[
+        { label: "Main Context (behind)", height: "240px" },
+        {
+          label: "Drawer Panel",
+          direction: "col",
+          height: "240px",
+          children: [
+            { label: "Header", height: "40px" },
+            { label: "Content", height: "140px" },
+            { label: "Actions", height: "48px" },
+          ],
+        },
+      ]}
+    />
   </div>
 );
 

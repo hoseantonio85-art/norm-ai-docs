@@ -1,6 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import PatternSection from "@/components/PatternSection";
-import WireframeSlot from "@/components/WireframeSlot";
+import StructureWireframe from "@/components/StructureWireframe";
 
 const ObjectModal = () => (
   <div className="space-y-6">
@@ -36,7 +36,21 @@ const ObjectModal = () => (
       </ul>
     </PatternSection>
 
-    <WireframeSlot label="OBJECT_MODAL" />
+    <StructureWireframe
+      zones={[
+        { label: "Header", height: "40px" },
+        {
+          label: "Body",
+          direction: "row",
+          children: [
+            { label: "Main Content", height: "180px" },
+            { label: "Meta / Control", height: "180px" },
+          ],
+        },
+        { label: "Relation Block", height: "60px" },
+        { label: "Decision Layer", height: "48px" },
+      ]}
+    />
   </div>
 );
 

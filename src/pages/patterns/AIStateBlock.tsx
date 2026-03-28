@@ -1,6 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import PatternSection from "@/components/PatternSection";
-import WireframeSlot from "@/components/WireframeSlot";
+import StructureWireframe from "@/components/StructureWireframe";
 
 const AIStateBlock = () => (
   <div className="space-y-6">
@@ -20,7 +20,13 @@ const AIStateBlock = () => (
       </ul>
     </PatternSection>
 
-    <WireframeSlot label="AI_STATE_BLOCK" />
+    <StructureWireframe
+      zones={[
+        { label: "Status Indicator", height: "36px" },
+        { label: "Explanation", height: "60px" },
+        { label: "CTA", height: "40px" },
+      ]}
+    />
   </div>
 );
 

@@ -1,6 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import PatternSection from "@/components/PatternSection";
-import WireframeSlot from "@/components/WireframeSlot";
+import StructureWireframe from "@/components/StructureWireframe";
 
 const AnalysisResult = () => (
   <div className="space-y-6">
@@ -23,7 +23,15 @@ const AnalysisResult = () => (
       </ul>
     </PatternSection>
 
-    <WireframeSlot label="ANALYSIS_RESULT" />
+    <StructureWireframe
+      zones={[
+        { label: "Summary", height: "48px" },
+        { label: "Changes Count", height: "36px" },
+        { label: "Risk List", height: "100px" },
+        { label: "AI Output", height: "60px" },
+        { label: "Recommendations", height: "60px" },
+      ]}
+    />
   </div>
 );
 

@@ -1,6 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import PatternSection from "@/components/PatternSection";
-import WireframeSlot from "@/components/WireframeSlot";
+import StructureWireframe from "@/components/StructureWireframe";
 
 const ActionConfirmation = () => (
   <div className="space-y-6">
@@ -13,7 +13,28 @@ const ActionConfirmation = () => (
       </ul>
     </PatternSection>
 
-    <WireframeSlot label="ACTION_CONFIRMATION" />
+    <StructureWireframe
+      direction="row"
+      zones={[
+        {
+          label: "Popover",
+          direction: "col",
+          children: [
+            { label: "Message", height: "40px" },
+            { label: "Confirm", height: "36px" },
+          ],
+        },
+        {
+          label: "Modal",
+          direction: "col",
+          children: [
+            { label: "Title", height: "32px" },
+            { label: "Action List", height: "80px" },
+            { label: "Actions", height: "36px" },
+          ],
+        },
+      ]}
+    />
   </div>
 );
 
