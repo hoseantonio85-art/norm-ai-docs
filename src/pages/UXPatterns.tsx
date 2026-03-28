@@ -6,11 +6,13 @@ interface PatternProps {
   id: string;
   name: string;
   when: string;
+  role?: string;
   composition?: string[];
   behavior?: string[];
   states?: string[];
   includes?: string[];
   types?: string[];
+  rules?: string[];
   relation?: string;
 }
 
@@ -97,6 +99,29 @@ const patterns: PatternProps[] = [
     composition: ["ссылка", "список связанных сущностей"],
     behavior: ["переход открывает новую модалку", "допускается modal over modal"],
   },
+  {
+    id: "ORCHESTRATION",
+    name: "Orchestration",
+    when: "Любое сложное взаимодействие внутри объекта",
+    role: "Управляет всеми слоями интерфейса",
+    includes: [
+      "object modal (основной контейнер)",
+      "signals (состояние)",
+      "AI state (процесс)",
+      "drawer (контекст)",
+      "navigation (связи)",
+    ],
+    rules: [
+      "один главный контекст (object)",
+      "остальные слои подчинены ему",
+      "пользователь всегда понимает, где он",
+    ],
+    behavior: [
+      "слои могут добавляться, но не ломают основной контекст",
+      "AI не перехватывает управление",
+      "пользователь остаётся центром принятия решений",
+    ],
+  },
 ];
 
 const wireframePatterns = ["OBJECT_MODAL", "SUBJECT_MODAL", "AI_STATE_BLOCK", "ACTION_CONFIRMATION", "ANALYSIS_RESULT", "DRAWER", "ASYNC_STATE"];
@@ -107,7 +132,13 @@ const UXPatterns = () => (
     <div className="space-y-8">
       {patterns.map((p) => (
         <div key={p.id}>
-          <DocCard title={p.name}>
+          <DocCard title={p.id === "ORCHESTRATION" ? `${p.name} — главный паттерн системы` : p.name}>
+            {p.role && (
+              <p className="mb-3">
+                <span className="font-semibold">Роль: </span>
+                <span>{p.role}</span>
+              </p>
+            )}
             <p className="mb-3">
               <span className="font-semibold">Когда: </span>
               <span>{p.when}</span>
@@ -148,6 +179,16 @@ const UXPatterns = () => (
                 <ul className="list-disc list-inside mt-1 text-muted-foreground">
                   {p.includes.map((inc) => (
                     <li key={inc}>{inc}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {p.rules && p.rules.length > 0 && (
+              <div className="mb-3">
+                <span className="font-semibold">Правила:</span>
+                <ul className="list-disc list-inside mt-1 text-muted-foreground">
+                  {p.rules.map((r) => (
+                    <li key={r}>{r}</li>
                   ))}
                 </ul>
               </div>
