@@ -6,11 +6,13 @@ interface PatternProps {
   id: string;
   name: string;
   when: string;
+  role?: string;
   composition?: string[];
   behavior?: string[];
   states?: string[];
   includes?: string[];
   types?: string[];
+  rules?: string[];
   relation?: string;
 }
 
