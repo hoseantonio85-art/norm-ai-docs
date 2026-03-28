@@ -96,8 +96,11 @@ const patterns: PatternProps[] = [
     id: "RELATION_NAVIGATION",
     name: "Relation Navigation",
     when: "Переход между объектом и источником",
+    role: "Связывает систему в единое пространство",
     composition: ["ссылка", "список связанных сущностей"],
-    behavior: ["переход открывает новую модалку", "допускается modal over modal"],
+    types: ["object → subject", "subject → object", "object → object"],
+    rules: ["переход не сбрасывает контекст пользователя", "поддерживает modal over modal"],
+    behavior: ["открытие нового слоя (modal)", "возврат сохраняет состояние"],
   },
   {
     id: "ORCHESTRATION",
