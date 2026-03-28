@@ -1,46 +1,45 @@
 import PageHeader from "@/components/PageHeader";
-import DocCard from "@/components/DocCard";
+import PatternSection from "@/components/PatternSection";
 import WireframeSlot from "@/components/WireframeSlot";
 
 const ObjectModal = () => (
-  <div>
+  <div className="space-y-6">
     <PageHeader title="Object Modal" subtitle="Открытие сущности (риск, событие)" />
-    <DocCard title="Object Modal">
-      <p className="mb-3">
-        <span className="font-semibold">Когда: </span>
-        <span>Открытие сущности (риск, событие)</span>
-      </p>
-      <div className="mb-3">
-        <span className="font-semibold">Состав:</span>
-        <ul className="list-disc list-inside mt-1 text-muted-foreground">
-          <li>контент (слева)</li>
-          <li>мета (справа)</li>
-          <li>действия (снизу)</li>
-        </ul>
-      </div>
-      <div className="mb-3">
-        <span className="font-semibold">Поведение:</span>
-        <ul className="list-disc list-inside mt-1 text-muted-foreground">
-          <li>view / edit переключение</li>
-          <li>вложенные модалки</li>
-        </ul>
-      </div>
-      <div className="mb-3">
-        <span className="font-semibold">Состояния:</span>
-        <ul className="list-disc list-inside mt-1 text-muted-foreground">
-          <li>draft</li>
-          <li>in progress</li>
-          <li>approved</li>
-        </ul>
-      </div>
-      <div className="mb-3">
-        <span className="font-semibold">Включает:</span>
-        <ul className="list-disc list-inside mt-1 text-muted-foreground">
-          <li>signals (alerts, AI)</li>
-          <li>связь с субъектами</li>
-        </ul>
-      </div>
-    </DocCard>
+
+    <PatternSection title="Когда" variant="when">
+      <p>Открытие сущности (риск, событие)</p>
+    </PatternSection>
+
+    <PatternSection title="Состав" variant="structure">
+      <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+        <li>контент (слева)</li>
+        <li>мета (справа)</li>
+        <li>действия (снизу)</li>
+      </ul>
+    </PatternSection>
+
+    <PatternSection title="Включает" variant="includes">
+      <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+        <li>signals (alerts, AI)</li>
+        <li>связь с субъектами</li>
+      </ul>
+    </PatternSection>
+
+    <PatternSection title="Поведение" variant="behavior">
+      <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+        <li>view / edit переключение</li>
+        <li>вложенные модалки</li>
+      </ul>
+    </PatternSection>
+
+    <PatternSection title="Состояния" variant="states">
+      <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+        <li>draft</li>
+        <li>in progress</li>
+        <li>approved</li>
+      </ul>
+    </PatternSection>
+
     <WireframeSlot label="OBJECT_MODAL" />
   </div>
 );

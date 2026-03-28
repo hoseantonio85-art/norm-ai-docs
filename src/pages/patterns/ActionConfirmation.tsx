@@ -1,23 +1,22 @@
 import PageHeader from "@/components/PageHeader";
-import DocCard from "@/components/DocCard";
+import PatternSection from "@/components/PatternSection";
 import WireframeSlot from "@/components/WireframeSlot";
 
 const ActionConfirmation = () => (
-  <div>
+  <div className="space-y-6">
     <PageHeader title="Action Confirmation" subtitle="Подтверждение действия" />
-    <DocCard title="Action Confirmation">
-      <p className="mb-3">
-        <span className="font-semibold">Когда: </span>
-        <span>Подтверждение действия</span>
-      </p>
-      <div className="mb-3">
-        <span className="font-semibold">Состав:</span>
-        <ul className="list-disc list-inside mt-1 text-muted-foreground">
-          <li>одно действие → popover</li>
-          <li>несколько → модалка</li>
-        </ul>
-      </div>
-    </DocCard>
+
+    <PatternSection title="Когда" variant="when">
+      <p>Подтверждение действия</p>
+    </PatternSection>
+
+    <PatternSection title="Состав" variant="structure">
+      <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+        <li>одно действие → popover</li>
+        <li>несколько → модалка</li>
+      </ul>
+    </PatternSection>
+
     <WireframeSlot label="ACTION_CONFIRMATION" />
   </div>
 );

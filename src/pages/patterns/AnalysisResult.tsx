@@ -1,33 +1,32 @@
 import PageHeader from "@/components/PageHeader";
-import DocCard from "@/components/DocCard";
+import PatternSection from "@/components/PatternSection";
 import WireframeSlot from "@/components/WireframeSlot";
 
 const AnalysisResult = () => (
-  <div>
+  <div className="space-y-6">
     <PageHeader title="Analysis Result" subtitle="Показ результата анализа" />
-    <DocCard title="Analysis Result">
-      <p className="mb-3">
-        <span className="font-semibold">Когда: </span>
-        <span>Показ результата анализа</span>
-      </p>
-      <div className="mb-3">
-        <span className="font-semibold">Состав:</span>
-        <ul className="list-disc list-inside mt-1 text-muted-foreground">
-          <li>summary</li>
-          <li>количество изменений</li>
-          <li>список рисков</li>
-          <li>AI вывод</li>
-          <li>рекомендации</li>
-          <li>группировка рисков</li>
-        </ul>
-      </div>
-      <div className="mb-3">
-        <span className="font-semibold">Поведение:</span>
-        <ul className="list-disc list-inside mt-1 text-muted-foreground">
-          <li>переход в риск</li>
-        </ul>
-      </div>
-    </DocCard>
+
+    <PatternSection title="Когда" variant="when">
+      <p>Показ результата анализа</p>
+    </PatternSection>
+
+    <PatternSection title="Состав" variant="structure">
+      <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+        <li>summary</li>
+        <li>количество изменений</li>
+        <li>список рисков</li>
+        <li>AI вывод</li>
+        <li>рекомендации</li>
+        <li>группировка рисков</li>
+      </ul>
+    </PatternSection>
+
+    <PatternSection title="Поведение" variant="behavior">
+      <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+        <li>переход в риск</li>
+      </ul>
+    </PatternSection>
+
     <WireframeSlot label="ANALYSIS_RESULT" />
   </div>
 );
