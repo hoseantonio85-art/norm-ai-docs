@@ -6,10 +6,6 @@ const SubjectModal = () => (
   <div className="space-y-6">
     <PageHeader title="Subject Modal" subtitle="Открытие источника (документ, новость)" />
 
-    <PatternSection title="Когда" variant="when">
-      <p>Открытие источника (документ, новость)</p>
-    </PatternSection>
-
     <PatternSection title="Состав" variant="structure">
       <ul className="list-disc list-inside space-y-1 text-muted-foreground">
         <li>описание</li>

@@ -6,10 +6,6 @@ const ObjectModal = () => (
   <div className="space-y-6">
     <PageHeader title="Object Modal" subtitle="Открытие сущности (риск, событие)" />
 
-    <PatternSection title="Когда" variant="when">
-      <p>Открытие сущности (риск, событие)</p>
-    </PatternSection>
-
     <PatternSection title="Состав" variant="structure">
       <ul className="list-disc list-inside space-y-1 text-muted-foreground">
         <li>контент (слева)</li>

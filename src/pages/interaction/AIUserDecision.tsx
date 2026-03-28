@@ -1,14 +1,15 @@
 import PageHeader from "@/components/PageHeader";
-import DocCard from "@/components/DocCard";
+import PatternSection from "@/components/PatternSection";
 
 const AIUserDecision = () => (
-  <div>
+  <div className="space-y-6">
     <PageHeader title="AI → User → Decision" subtitle="Модель принятия решений" />
-    <DocCard title="AI → User → Decision">
+
+    <PatternSection title="Поведение" variant="behavior">
       <p className="text-muted-foreground">
         AI предоставляет анализ → пользователь оценивает → пользователь принимает решение.
       </p>
-    </DocCard>
+    </PatternSection>
   </div>
 );
 

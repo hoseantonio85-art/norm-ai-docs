@@ -1,14 +1,15 @@
 import PageHeader from "@/components/PageHeader";
-import DocCard from "@/components/DocCard";
+import PatternSection from "@/components/PatternSection";
 
 const NonBlocking = () => (
-  <div>
+  <div className="space-y-6">
     <PageHeader title="Non Blocking" subtitle="Неблокирующий интерфейс" />
-    <DocCard title="Non Blocking">
+
+    <PatternSection title="Правила" variant="rules">
       <p className="text-muted-foreground">
         UI не должен блокировать пользователя ожиданием AI
       </p>
-    </DocCard>
+    </PatternSection>
   </div>
 );
 

@@ -1,17 +1,18 @@
 import PageHeader from "@/components/PageHeader";
-import DocCard from "@/components/DocCard";
+import PatternSection from "@/components/PatternSection";
 
 const ApplyMeasures = () => (
-  <div>
+  <div className="space-y-6">
     <PageHeader title="Применение мер" subtitle="Сценарий применения мер" />
-    <DocCard title="Применение мер">
+
+    <PatternSection title="Шаги" variant="structure">
       <ol className="list-decimal list-inside space-y-1 text-muted-foreground">
         <li>Выбор риска</li>
         <li>Выбор меры</li>
         <li>Подтверждение</li>
         <li>Применение</li>
       </ol>
-    </DocCard>
+    </PatternSection>
   </div>
 );
 

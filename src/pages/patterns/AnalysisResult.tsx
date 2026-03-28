@@ -6,10 +6,6 @@ const AnalysisResult = () => (
   <div className="space-y-6">
     <PageHeader title="Analysis Result" subtitle="Показ результата анализа" />
 
-    <PatternSection title="Когда" variant="when">
-      <p>Показ результата анализа</p>
-    </PatternSection>
-
     <PatternSection title="Состав" variant="structure">
       <ul className="list-disc list-inside space-y-1 text-muted-foreground">
         <li>summary</li>

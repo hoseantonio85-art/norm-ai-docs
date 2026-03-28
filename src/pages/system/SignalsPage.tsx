@@ -1,32 +1,26 @@
 import PageHeader from "@/components/PageHeader";
-import DocCard from "@/components/DocCard";
+import PatternSection from "@/components/PatternSection";
 
 const SignalsPage = () => (
-  <div>
+  <div className="space-y-6">
     <PageHeader title="Signals" subtitle="Отображение состояния системы и событий" />
-    <DocCard title="Signals">
-      <p className="mb-3">
-        <span className="font-semibold">Когда: </span>
-        <span>Отображение состояния системы и событий</span>
-      </p>
-      <div className="mb-3">
-        <span className="font-semibold">Типы:</span>
-        <ul className="list-disc list-inside mt-1 text-muted-foreground">
-          <li>Blocking — ошибка, нельзя продолжить</li>
-          <li>Warning — требуется внимание</li>
-          <li>Info — контекст</li>
-          <li>AI — действие агента</li>
-        </ul>
-      </div>
-      <div className="mb-3">
-        <span className="font-semibold">Поведение:</span>
-        <ul className="list-disc list-inside mt-1 text-muted-foreground">
-          <li>сигнал всегда привязан к контексту (объекту или действию)</li>
-          <li>не блокирует действия пользователя</li>
-          <li>сигнал не должен ломать поток пользователя</li>
-        </ul>
-      </div>
-    </DocCard>
+
+    <PatternSection title="Типы" variant="structure">
+      <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+        <li>Blocking — ошибка, нельзя продолжить</li>
+        <li>Warning — требуется внимание</li>
+        <li>Info — контекст</li>
+        <li>AI — действие агента</li>
+      </ul>
+    </PatternSection>
+
+    <PatternSection title="Поведение" variant="behavior">
+      <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+        <li>сигнал всегда привязан к контексту (объекту или действию)</li>
+        <li>не блокирует действия пользователя</li>
+        <li>сигнал не должен ломать поток пользователя</li>
+      </ul>
+    </PatternSection>
   </div>
 );
 

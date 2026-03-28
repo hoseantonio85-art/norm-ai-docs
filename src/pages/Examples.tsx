@@ -1,6 +1,5 @@
 import PageHeader from "@/components/PageHeader";
 import WireframeSlot from "@/components/WireframeSlot";
-import DocCard from "@/components/DocCard";
 
 const examples = [
   { label: "EVENT_MODAL", title: "Event Modal" },
@@ -14,11 +13,7 @@ const Examples = () => (
     <PageHeader title="Examples" subtitle="Здесь будут реальные интерфейсы и wireframes" />
     <div className="space-y-6">
       {examples.map((ex) => (
-        <div key={ex.label}>
-          <DocCard title={ex.title}>
-            <WireframeSlot label={ex.label} height="240px" />
-          </DocCard>
-        </div>
+        <WireframeSlot key={ex.label} label={ex.label} height="240px" />
       ))}
     </div>
   </div>

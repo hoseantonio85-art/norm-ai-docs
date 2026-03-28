@@ -1,16 +1,17 @@
 import PageHeader from "@/components/PageHeader";
-import DocCard from "@/components/DocCard";
+import PatternSection from "@/components/PatternSection";
 
 const CreateEvent = () => (
-  <div>
+  <div className="space-y-6">
     <PageHeader title="Создание события" subtitle="Сценарий создания события" />
-    <DocCard title="Создание события">
+
+    <PatternSection title="Шаги" variant="structure">
       <ol className="list-decimal list-inside space-y-1 text-muted-foreground">
         <li>Пользователь инициирует создание</li>
         <li>Заполнение полей</li>
         <li>Сохранение</li>
       </ol>
-    </DocCard>
+    </PatternSection>
   </div>
 );
 

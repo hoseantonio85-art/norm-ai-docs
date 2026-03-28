@@ -6,10 +6,6 @@ const AIStateBlock = () => (
   <div className="space-y-6">
     <PageHeader title="AI State Block" subtitle="AI выполняет действие или не может выполнить" />
 
-    <PatternSection title="Когда" variant="when">
-      <p>AI выполняет действие или не может выполнить</p>
-    </PatternSection>
-
     <PatternSection title="Состав" variant="structure">
       <ul className="list-disc list-inside space-y-1 text-muted-foreground">
         <li>статус (ищу / нашёл / не нашёл)</li>

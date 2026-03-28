@@ -6,10 +6,6 @@ const DrawerPattern = () => (
   <div className="space-y-6">
     <PageHeader title="Drawer" subtitle="Открытие дополнительного контекста без потери фокуса" />
 
-    <PatternSection title="Когда" variant="when">
-      <p>Открытие дополнительного контекста без потери фокуса (история, мета, версии, меры)</p>
-    </PatternSection>
-
     <PatternSection title="Состав" variant="structure">
       <ul className="list-disc list-inside space-y-1 text-muted-foreground">
         <li>панель справа (overlay)</li>
