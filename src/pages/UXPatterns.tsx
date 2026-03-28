@@ -183,6 +183,16 @@ const UXPatterns = () => (
                 </ul>
               </div>
             )}
+            {p.rules && p.rules.length > 0 && (
+              <div className="mb-3">
+                <span className="font-semibold">Правила:</span>
+                <ul className="list-disc list-inside mt-1 text-muted-foreground">
+                  {p.rules.map((r) => (
+                    <li key={r}>{r}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             {p.behavior && p.behavior.length > 0 && (
               <div className="mb-3">
                 <span className="font-semibold">Поведение:</span>
