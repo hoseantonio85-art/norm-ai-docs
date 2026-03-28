@@ -41,6 +41,9 @@ import ApplyMeasures from "./pages/flows/ApplyMeasures";
 import AIWork from "./pages/flows/AIWork";
 import NavigationFlow from "./pages/flows/NavigationFlow";
 
+// Examples
+import ObjectModalDemo from "./pages/examples/ObjectModalDemo";
+
 const queryClient = new QueryClient();
 
 const App = () => (
